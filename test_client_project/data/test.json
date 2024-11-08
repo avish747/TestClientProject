@@ -1,72 +1,22 @@
-{
-  "servers": [
-    {
-      "id": "server-001",
-      "ip_address": "192.168.1.1",
-      "hostname": "web-server-1",
-      "location": {
-        "country": "US",
-        "region": "California",
-        "city": "Los Angeles"
-      },
-      "status": "active",
-      "usage": {
-        "cpu": "20%",
-        "memory": "512MB",
-        "disk": "10GB"
-      },
-      "last_updated": "2024-10-24T10:00:00Z"
-    },
-    {
-      "id": "server-002",
-      "ip_address": "192.168.1.2",
-      "hostname": "db-server-1",
-      "location": {
-        "country": "US",
-        "region": "New York",
-        "city": "New York City"
-      },
-      "status": "inactive",
-      "usage": {
-        "cpu": "5%",
-        "memory": "1024MB",
-        "disk": "50GB"
-      },
-      "last_updated": "2024-10-24T09:45:00Z"
-    },
-    {
-      "id": "server-003",
-      "ip_address": "10.0.0.1",
-      "hostname": "cache-server-1",
-      "location": {
-        "country": "CA",
-        "region": "Ontario",
-        "city": "Toronto"
-      },
-      "status": "active",
-      "usage": {
-        "cpu": "50%",
-        "memory": "256MB",
-        "disk": "5GB"
-      },
-      "last_updated": "2024-10-24T08:30:00Z"
-    },
-    {
-      "id": "server-004",
-      "ip_address": "172.16.0.1",
-      "hostname": "analytics-server-1",
-      "location": {
-        "country": "DE",
-        "region": "Bavaria",
-        "city": "Munich"
-      },
-      "status": "maintenance",
-      "usage": {
-        "cpu": "0%",
-        "memory": "0MB",
-        "disk": "0GB"
-      },
-      "last_updated": "2024-10-24T07:20:00Z"
-    }
-  ]
-}
+[
+  {
+    "IP": "192.168.1.1",
+    "Comment": "Main office router"
+  },
+  {
+    "IP": "10.0.0.45",
+    "Comment": "Finance department server"
+  },
+  {
+    "IP": "172.16.0.101",
+    "Comment": "Backup storage device"
+  },
+  {
+    "IP": "192.168.2.10",
+    "Comment": "Development environment gateway"
+  },
+  {
+    "IP": "10.1.1.200",
+    "Comment": "Sales team laptop network"
+  }
+]
