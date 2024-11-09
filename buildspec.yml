@@ -5,19 +5,36 @@ phases:
     runtime-versions:
       python: 3.x
     commands:
-      - echo "Starting build to upload file to S3"
+      # Ensure Git is initialized and fetch full history
+      - echo "Initializing Git repository and fetching full history"
+      - git init
+      - git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+      - git fetch --all
+      # Fetch all commits if it's a shallow clone
+      - git fetch --unshallow || echo "Already have full history"
 
   pre_build:
     commands:
-      # Check if the file test.json has changed
-      - FILE="test.json"
-      - if git diff --name-only | grep -q "$FILE"; then export FILE_CHANGED=true; else export FILE_CHANGED=false; fi
+      # Define the file to check for changes
+      - FILE="test_client_project/data/test.json"
+      # Check if the specified file has changed between the latest commit (HEAD) and the previous commit (HEAD~1)
+      - echo "Checking if the file has changed"
+      - if git diff --name-only HEAD~1 HEAD | grep -q "$FILE"; then
+          export FILE_CHANGED=true;
+        else
+          export FILE_CHANGED=false;
+        fi
 
   build:
     commands:
+      # Upload the file to S3 only if it has changed
       - if [ "$FILE_CHANGED" = true ]; then
-          echo "Uploading $FILE to S3...";
+          echo "File has changed. Uploading $FILE to S3...";
           aws s3 cp $FILE s3://test-client-project/source_ip_file/test.json;
         else
           echo "$FILE has not changed. Skipping upload.";
         fi
+
+artifacts:
+  files:
+    - test_client_project/data/test.json  # Optionally include the file in artifacts if needed
