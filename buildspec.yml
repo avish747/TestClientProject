@@ -14,7 +14,7 @@ phases:
       - git fetch --all
       - git status
       - FILE="test_client_project/data/test.json"
-      - if git diff --name-only HEAD^ HEAD | grep -q "$FILE"; then export FILE_CHANGED=true; else export FILE_CHANGED=false; fi
+      - if git diff --name-only origin/main~1 origin/main | grep -q "$FILE"; then export FILE_CHANGED=true; else export FILE_CHANGED=false; fi
 
   pre_build:
     commands:
