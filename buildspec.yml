@@ -20,8 +20,7 @@ phases:
       - FILE="test_client_project/data/test.json"
       # Check if the specified file has changed between the latest commit (HEAD) and the previous commit (HEAD~1)
       - echo "Checking if the file has changed"
-      - git log --oneline  # Debugging: Show the last few commits to ensure HEAD~1 exists
-      - if git diff --name-only origin/main~1 origin/main | grep -q "$FILE"; then
+      - if git diff --name-only | grep -q "$FILE"; then
           export FILE_CHANGED=true;
         else
           export FILE_CHANGED=false;
