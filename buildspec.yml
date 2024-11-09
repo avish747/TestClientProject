@@ -11,7 +11,7 @@ phases:
     commands:
       # Check if the file test.json has changed
       - FILE="test.json"
-      - if git diff --name-only HEAD^ HEAD | grep -q "$FILE"; then export FILE_CHANGED=true; else export FILE_CHANGED=false; fi
+      - if git diff --name-only HEAD~1 HEAD | grep -q "$FILE"; then export FILE_CHANGED=true; else export FILE_CHANGED=false; fi
 
   build:
     commands:
