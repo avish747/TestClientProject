@@ -13,19 +13,14 @@ phases:
       - git log --oneline --all
       - git fetch --all
       - git status
+      - FILE="test_client_project/data/test.json"
+      - if git diff --name-only HEAD^ HEAD | grep -q "$FILE"; then export FILE_CHANGED=true; else export FILE_CHANGED=false; fi
 
   pre_build:
     commands:
-      # Define the file to check for changes
-      - FILE="test_client_project/data/test.json"
-      # Check if the specified file has changed between the latest commit (HEAD) and the previous commit (HEAD~1)
       - echo "Checking if the file has changed"
-      - git diff --name-only
-      - if git diff --name-only | grep -q "$FILE"; then
-          export FILE_CHANGED=true;
-        else
-          export FILE_CHANGED=false;
-        fi
+      - echo "The value of FILE_CHANGED"
+      - echo $FILE_CHANGED
 
   build:
     commands:
