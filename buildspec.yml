@@ -5,10 +5,8 @@ phases:
     runtime-versions:
       python: 3.x
     commands:
-      # Ensure Git is initialized and fetch full history
-      - echo "Initializing Git repository and fetching full history"
-      - git init
-      - git remote add origin https://github.com/avish747/TestClientProject.git
+      # Fetch the full history to ensure previous commits are available
+      - echo "Fetching full history"
       - git fetch --all
       # Fetch all commits if it's a shallow clone
       - git fetch --unshallow || echo "Already have full history"
