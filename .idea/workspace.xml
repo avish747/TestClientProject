@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f464d1d-dcca-4662-848e-54d1cb2dab62" name="Changes" comment="" />
+    <list default="true" id="5f464d1d-dcca-4662-848e-54d1cb2dab62" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/test_client_project/data/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_client_project/data/test.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
