@@ -10,5 +10,9 @@
   {
     "IP": "172.16.0.101",
     "Comment": "Backup storage device"
+  },
+  {
+    "IP": "192.168.2.10",
+    "Comment": "Development environment gateway"
   }
 ]
