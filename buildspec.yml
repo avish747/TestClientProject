@@ -8,7 +8,7 @@ phases:
       # Ensure Git is initialized and fetch full history
       - echo "Initializing Git repository and fetching full history"
       - git init
-      - git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+      - git remote add origin https://github.com/avish747/TestClientProject.git
       - git fetch --all
       # Fetch all commits if it's a shallow clone
       - git fetch --unshallow || echo "Already have full history"
