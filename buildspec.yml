@@ -19,7 +19,7 @@ phases:
   pre_build:
     commands:
       - echo "Checking if the file has changed"
-      - echo "The value of file changed"
+      - echo "The value of FILE_CHANGED"
       - echo $FILE_CHANGED
 
   build:
