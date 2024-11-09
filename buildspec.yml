@@ -6,18 +6,12 @@ phases:
       python: 3.x
     commands:
       - echo "Starting build to upload file to S3"
-      # Fetch latest changes to make sure HEAD is updated
-      - git fetch --all
 
   pre_build:
     commands:
-      - FILE="test_client_project/data/test.json"
-      # Check if the file is staged or changed in this commit using git diff-index
-      - if git diff-index --name-only HEAD | grep -q "$FILE"; then
-          export FILE_CHANGED=true;
-        else
-          export FILE_CHANGED=false;
-        fi
+      # Check if the file test.json has changed
+      - FILE="test.json"
+      - if git diff --name-only HEAD^ HEAD | grep -q "$FILE"; then export FILE_CHANGED=true; else export FILE_CHANGED=false; fi
 
   build:
     commands:
