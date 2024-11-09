@@ -9,6 +9,8 @@ phases:
       - echo "Initializing Git repository and fetching full history"
       - git init --initial-branch=main
       - git remote add origin https://github.com/avish747/TestClientProject.git
+      - git fetch origin
+      - git log --oneline --all
       - git fetch --all
       - git status
 
