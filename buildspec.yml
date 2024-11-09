@@ -10,9 +10,7 @@ phases:
       - git init --initial-branch=main
       - git remote add origin https://github.com/avish747/TestClientProject.git
       - git fetch --all
-      # Fetch all commits if it's a shallow clone
-      - git fetch --unshallow || echo "Already have full history"
-      - git log --oneline  # Debugging: Show the last few commits
+      - git status
 
   pre_build:
     commands:
