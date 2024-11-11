@@ -2,5 +2,25 @@
   {
     "IP": "192.168.1.1",
     "Comment": "Main office router"
+  },
+  {
+    "IP": "10.0.0.45",
+    "Comment": "Finance department server"
+  },
+  {
+    "IP": "172.16.0.101",
+    "Comment": "Backup storage device"
+  },
+  {
+    "IP": "192.168.2.10",
+    "Comment": "Development environment gateway"
+  },
+  {
+    "IP": "10.1.1.200",
+    "Comment": "Sales team laptop network"
+  },
+  {
+    "IP": "10.1.1.950",
+    "Comment": "IT team laptop network"
   }
 ]
